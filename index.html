@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <script>
+// Homework 6.1
+function removeChar(str, charsToRemove) {
+    let charsSet = new Set(charsToRemove);
+    let result = '';
+    for (let char of str) {
+        if (!charsSet.has(char)) {
+            result += char;
+        }
+    }
+    return result;
+}
+let inputString = prompt("Введіть строку:");
+
+let charsToRemoveString = prompt("Введіть символи для видалення:");
+
+let charsToRemoveArray = charsToRemoveString.split('');
+let resultString = removeChar(inputString, charsToRemoveArray);
+console.log(`Результат: ${resultString}`);
+
+// Homework 6.2
+
+function averageOfNumbers(arr) {
+    let numericElements = arr.filter(item => typeof item === 'number');  
+  
+    if (numericElements.length === 0) {
+        return null;
+    }
+    let sum = numericElements.reduce((acc, num) => acc + num, 0);    
+    return sum / numericElements.length;
+}
+
+// Homework 6.3
+
+function removeElement(array, item) {
+const index = array.indexOf(item); 
+if (index !== -1) {
+     array.splice(index, 1);
+    }
+}
+
+const array = [1, 3, 4, 5, 6, 7, 8, 9, 10];
+removeElement(array, 4);
+console.log(array); 
+</script>  
+</body>
+</html>
+
